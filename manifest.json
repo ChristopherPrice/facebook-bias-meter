@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "Facebook Bias Meter",
+    "version": "1.0",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.facebook.com/*"
+            ],
+            "js": [
+                "js/lib/jquery-3.1.1.min.js",
+                "js/content.js"
+            ]
+        }
+    ],
+    "background": {
+        "scripts": [
+        ]
+    },
+    "icons": {
+    },
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "storage",
+        "tabs",
+        "activeTab"
+    ]
+}
