@@ -1,0 +1,18 @@
+{
+  "name": "facebook-bias-meter",
+  "version": "1.0.0",
+  "description": "Chrome extension that provides an indicator of bias for articles shared on Facebook.",
+  "devDependencies": {
+    "babel-core": "~6.22.1",
+    "babelify": "~7.3.0",
+    "browserify": "~14.00.0",
+    "jshint": "~2.9.4",
+    "nodeunit": "~0.11.0",
+    "watchify": "~3.9.0"
+  },
+  "scripts": {
+    "test": "nodeunit test/**/*.js",
+    "jshint": "./node_modules/.bin/jshint src/js/**/*.js",
+    "watch": "./scripts/watch.sh"
+   }
+}
