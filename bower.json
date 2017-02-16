@@ -1,0 +1,14 @@
+{
+  "name": "facebook-bias-meter",
+  "description": "Chrome extension that provides an indicator of bias for articles shared on Facebook.",
+  "main": "",
+  "authors": [
+    "Chris Price <christopher.allen.price@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ChristopherPrice/facebook-bias-meter",
+  "private": true,
+  "dependencies": {
+    "react": "~15.4.2"
+  }
+}
