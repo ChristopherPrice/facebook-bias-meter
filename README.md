@@ -10,11 +10,9 @@ To build, simply run the following commands:
 
 This will install all dev dependencies, transpile and bundle JS, and install front-end dependencies.
 
-Similarly, once dev dependencies are installed you can run the following command:
+To run the build script on file changes, run the following command (once dev dependencies are installed):
     
 * `npm run watch`
-
-This will run the build script on file changes.
 
 To clear all build artifacts, run the following command:
     
