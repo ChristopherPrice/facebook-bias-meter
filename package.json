@@ -8,11 +8,16 @@
     "browserify": "~14.00.0",
     "jshint": "~2.9.4",
     "nodeunit": "~0.11.0",
-    "watchify": "~3.9.0"
+    "watch": "~1.0.1"
   },
   "scripts": {
     "test": "nodeunit test/**/*.js",
     "jshint": "./node_modules/.bin/jshint src/js/**/*.js",
-    "watch": "./scripts/watch.sh"
-   }
+    "watch": "./scripts/watch.sh",
+    "build": "./scripts/build.sh"
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0"
+  }
 }
