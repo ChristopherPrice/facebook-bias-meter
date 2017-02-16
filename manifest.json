@@ -8,6 +8,8 @@
                 "*://www.facebook.com/*"
             ],
             "js": [
+                "build/js/vendor/react/react.js",
+                "build/js/vendor/react/react-dom.js",
                 "build/js/content-bundle.js"
             ]
         }
