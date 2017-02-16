@@ -3,11 +3,13 @@
 Chrome extension that provides an indicator of bias for articles shared on Facebook.
 
 To build, simply run the following commands:
-    npm install
-    npm run build
+    `npm install`
+    `npm run build`
 This will install all dev dependencies, transpile and bundle JS, and install front-end dependencies.
+
 Similarly, once dev dependencies are installed you can run
-    npm run watch
+    `npm run watch`
 This will run the build script on file changes.
+
 To clear all build artifacts, run
-    npm run clean
+    `npm run clean`
