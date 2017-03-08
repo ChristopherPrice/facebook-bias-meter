@@ -4,15 +4,18 @@
   "description": "Chrome extension that provides an indicator of bias for articles shared on Facebook.",
   "devDependencies": {
     "babel-core": "~6.22.1",
+    "babel-jest": "^19.0.0",
     "babelify": "~7.3.0",
     "bower": "~1.8.0",
     "browserify": "~14.00.0",
+    "jest": "^19.0.2",
     "jshint": "~2.9.4",
     "nodeunit": "~0.11.0",
+    "regenerator-runtime": "^0.10.3",
     "watch": "~1.0.1"
   },
   "scripts": {
-    "test": "nodeunit test/**/*.js",
+    "test": "jest test/**/*.js",
     "jshint": "./node_modules/.bin/jshint src/js/**/*.js",
     "bower_install": "./node_modules/.bin/bower install",
     "watch": "./scripts/watch.sh",

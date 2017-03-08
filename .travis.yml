@@ -1,6 +1,7 @@
 language: node_js
 node_js: "6.9.5"
 install: 
+    - npm run clean
     - npm install
-    - ./scripts/build.sh
+    - npm run build
     - npm test
