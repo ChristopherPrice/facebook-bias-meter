@@ -2,6 +2,11 @@ function addIndicatorToArticles() {
 
 }
 
+function addIndicatorToArticle() {
+
+}
+
 export default {
-  "addIndicatorToArticles": addIndicatorToArticles
+  "addIndicatorToArticles": addIndicatorToArticles,
+  "addIndicatorToArticle": addIndicatorToArticle
 };
