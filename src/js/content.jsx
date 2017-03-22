@@ -4,6 +4,7 @@ document.addEventListener('load', () => {
     BiasIndicatorHelper.addIndicatorToArticles();
 });
 
+// TODO would be preferable to use MutationObserver if not for the fact that it can not currently be tested using Jest
 document.addEventListener("DOMNodeInserted", (event) => {
   if (event.target.className === "_52c6") {
     BiasIndicatorHelper.addIndicatorToArticle();
