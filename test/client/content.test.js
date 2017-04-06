@@ -1,10 +1,27 @@
-describe("main content script", () =>{
+describe("main content script", () => {
+  test("loads configs on page load", () => {
+    require("../../src/js/content");
+
+    jest.mock("../../src/js/client/bias-indicator-helper");
+    const BiasIndicatorHelper = require("../../src/js/client/bias-indicator-helper").default;
+    BiasIndicatorHelper.initConfigs = jest.fn();
+
+    let onLoadEvent = new Event("load");
+
+    document.dispatchEvent(onLoadEvent);
+
+    expect(BiasIndicatorHelper.initConfigs).toBeCalled();
+  });
+
   test("finds articles and adds inidicator on page load", () => {
     require("../../src/js/content");
 
     jest.mock("../../src/js/client/bias-indicator-helper");
     const BiasIndicatorHelper = require("../../src/js/client/bias-indicator-helper").default;
     BiasIndicatorHelper.addIndicatorToArticles = jest.fn();
+    BiasIndicatorHelper.initConfigs = jest.fn((callback) => {
+      callback();
+    });
 
     let onLoadEvent = new Event("load");
 
@@ -31,7 +48,7 @@ describe("main content script", () =>{
 
     document.dispatchEvent(onDomNodeInsertedEvent);
 
-    expect(BiasIndicatorHelper.addIndicatorToArticle).toBeCalled();
+    expect(BiasIndicatorHelper.addIndicatorToArticle).toBeCalledWith(eventTarget);
   });
 
   test("does not add indicator to non-articles as they are added to the DOM", () => {

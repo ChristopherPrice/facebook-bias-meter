@@ -9,18 +9,25 @@
     "bower": "~1.8.0",
     "browserify": "~14.00.0",
     "jest": "^19.0.2",
+    "jest-fetch-mock": "^1.0.8",
     "jshint": "~2.9.4",
     "nodeunit": "~0.11.0",
     "regenerator-runtime": "^0.10.3",
     "watch": "~1.0.1"
   },
   "scripts": {
-    "test": "jest test/**/*.js",
+    "test": "jest test/**/*.test.js",
     "jshint": "./node_modules/.bin/jshint src/js/**/*.js",
     "bower_install": "./node_modules/.bin/bower install",
     "watch": "./scripts/watch.sh",
     "build": "./scripts/build.sh",
     "clean": "./scripts/clean.sh"
+  },
+  "jest": {
+    "automock": false,
+    "setupFiles": [
+      "./test/jest-setup.js"
+    ]
   },
   "dependencies": {
     "babel-preset-es2015": "^6.22.0",
