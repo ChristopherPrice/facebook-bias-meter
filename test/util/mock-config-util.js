@@ -35,4 +35,4 @@ function mockPoorlyFormedConfigs() {
 export default  {
   "mockWellFormedConfigs": mockWellFormedConfigs,
   "mockPoorlyFormedConfigs": mockPoorlyFormedConfigs
-}
+};

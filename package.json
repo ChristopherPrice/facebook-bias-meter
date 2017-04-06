@@ -26,7 +26,7 @@
   "jest": {
     "automock": false,
     "setupFiles": [
-      "./test/jest-setup.js"
+      "./test/util/jest-setup.js"
     ]
   },
   "dependencies": {
