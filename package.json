@@ -29,6 +29,8 @@
   },
   "jest": {
     "automock": false,
+    "collectCoverage": true,
+    "collectCoverageFrom": ["src/js/**.{js,jsx}"],
     "setupFiles": [
       "./test/util/jest-setup.js"
     ]
