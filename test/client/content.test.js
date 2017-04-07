@@ -1,9 +1,16 @@
+jest.mock("../../src/js/client/bias-indicator-helper");
+
+import BiasIndicatorHelper from "../../src/js/client/bias-indicator-helper";
+import MockConfigUtil from "../util/mock-config-util";
+
 describe("main content script", () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   test("loads configs on page load", () => {
     require("../../src/js/content");
 
-    jest.mock("../../src/js/client/bias-indicator-helper");
-    const BiasIndicatorHelper = require("../../src/js/client/bias-indicator-helper").default;
     BiasIndicatorHelper.initConfigs = jest.fn();
 
     let onLoadEvent = new Event("load");
@@ -16,26 +23,23 @@ describe("main content script", () => {
   test("finds articles and adds inidicator on page load", () => {
     require("../../src/js/content");
 
-    jest.mock("../../src/js/client/bias-indicator-helper");
-    const BiasIndicatorHelper = require("../../src/js/client/bias-indicator-helper").default;
+    const mockWellFormedConfigs = MockConfigUtil.mockWellFormedConfigs();
     BiasIndicatorHelper.addIndicatorToArticles = jest.fn();
     BiasIndicatorHelper.initConfigs = jest.fn((callback) => {
-      callback();
+      callback(mockWellFormedConfigs);
     });
 
     let onLoadEvent = new Event("load");
 
     document.dispatchEvent(onLoadEvent);
 
-    expect(BiasIndicatorHelper.addIndicatorToArticles).toBeCalled();
+    expect(BiasIndicatorHelper.addIndicatorToArticles).toBeCalledWith(mockWellFormedConfigs);
   });
 
   test("adds indicator to articles as they are added to the DOM", () => {
     require("../../src/js/content");
 
-    jest.mock("../../src/js/client/bias-indicator-helper");
-    const BiasIndicatorHelper = require("../../src/js/client/bias-indicator-helper").default;
-    BiasIndicatorHelper.addIndicatorToArticle = jest.fn();
+    BiasIndicatorHelper.addIndicatorToArticle = jest.fn().mockImplementationOnce();
 
     let eventTarget = document.createElement("a");
     eventTarget.className = "_52c6";
@@ -54,8 +58,6 @@ describe("main content script", () => {
   test("does not add indicator to non-articles as they are added to the DOM", () => {
     require("../../src/js/content");
 
-    jest.mock("../../src/js/client/bias-indicator-helper");
-    const BiasIndicatorHelper = require("../../src/js/client/bias-indicator-helper").default;
     BiasIndicatorHelper.addIndicatorToArticle = jest.fn();
 
     let eventTarget = document.createElement("a");

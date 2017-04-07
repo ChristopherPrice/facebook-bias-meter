@@ -1,17 +1,15 @@
-function initConfigs(callback) {
-  callback();
+class BiasIndicatorHelper {
+  static initConfigs(callback) {
+    callback();
+  }
+
+  static addIndicatorToArticles() {
+
+  }
+
+  static addIndicatorToArticle() {
+
+  }
 }
 
-function addIndicatorToArticles() {
-
-}
-
-function addIndicatorToArticle() {
-
-}
-
-export default {
-  "initConfigs": initConfigs,
-  "addIndicatorToArticles": addIndicatorToArticles,
-  "addIndicatorToArticle": addIndicatorToArticle
-};
+module.exports = BiasIndicatorHelper;

@@ -1,5 +1,5 @@
-let MockConfigUtil = require("../util/mock-config-util").default;
-let BiasIndicatorHelper = require("../../src/js/client/bias-indicator-helper").default;
+import MockConfigUtil from "../util/mock-config-util";
+import BiasIndicatorHelper from "../../src/js/client/bias-indicator-helper";
 
 describe("BiasIndicatorHelper", () => {
   test("initConfigs", () => {
