@@ -1,4 +1,5 @@
 import MockConfigUtil from "../util/mock-config-util";
+import MockFacebookPage from "../util/mock-facebook-page";
 import BiasIndicatorHelper from "../../src/js/client/bias-indicator-helper";
 
 describe("BiasIndicatorHelper initConfigs", () => {
@@ -15,5 +16,11 @@ describe("BiasIndicatorHelper initConfigs", () => {
     fetch.mockResponseOnce(JSON.stringify(mockWellFormedConfigs));
 
     await expect(BiasIndicatorHelper.initConfigs()).resolves.toEqual(mockWellFormedConfigs);
+  });
+});
+
+describe("BisIndicatorHelper addIndicatorToArticles", () => {
+  test("adds one indicator to page with one article", () => {
+
   });
 });

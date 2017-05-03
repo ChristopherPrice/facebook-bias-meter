@@ -1,36 +1,42 @@
 class MockConfigUtil {
   static mockWellFormedConfigs() {
-    return {
-      "politico": {
+    return [
+      {
+        "domain": "politico",
         "quality": 3,
         "bias": -1
       },
-      "vox": {
+      {
+        "domain": "vox",
         "quality": 2,
         "bias": -3
       },
-      "breitbart": {
+      {
+        "domain": "breitbart",
         "quality": 1,
         "bias": 3
       }
-    };
+    ];
   }
 
   static mockPoorlyFormedConfigs() {
-    return {
-      "politico": {
+    return [
+      {
+        "domain": "politico",
         "qaulity": 3,
         "bais": -1
       },
-      "vox": {
+      {
+        "domain": "vox",
         "quality": "good",
         "bias": "left"
       },
-      "breitbart": {
+      {
+        "domain": "breitbart",
         "quality": 8,
         "bias": 4
       }
-    };
+    ];
   }
 }
 
